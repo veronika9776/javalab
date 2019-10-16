@@ -9,6 +9,7 @@ public class Consol extends Tovar {
     @Override
     public void create() {
 
+
     }
 
     @Override
