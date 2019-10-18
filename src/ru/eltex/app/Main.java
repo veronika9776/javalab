@@ -1,4 +1,5 @@
 package ru.eltex.app;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -8,10 +9,22 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Tovar.ID();
+        String[] firm = {"Телевизор", "Игровая консоль", "Телеприставка"};
+        Random random1 = new Random();
+        int pos = random1.nextInt(firm.length);
+        System.out.println(firm[pos]);
+        if (firm[pos].equals("Телевизор")) {
+            TV tv = new TV() ;
+            tv.create();
+        } else if (firm[pos].equals("Игровая консоль")) {
+            Consol con = new Consol() ;
+            con.create();
+        } else if (firm[pos].equals("Телеприставка")) {
+            Pristavka pr = new Pristavka();
+            pr.create();
 
-        TV g = new TV();
-        g.create();
-
+        }
 
 
 //        System.out.println(qty.nextInt());
