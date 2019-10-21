@@ -3,8 +3,24 @@ import java.util.UUID;
 
 abstract public class Tovar implements ICrudAction {
 
-    public static void ID() {
-        UUID id = UUID.randomUUID();
-        System.out.println(id);
+    protected int prise;
+    protected String firm;
+    protected String model;
+    private UUID ID;
+
+    public Tovar() {
+        ID = UUID.randomUUID();
+        count++;
     }
+
+    public UUID getID() {
+        return ID;
+    }
+
+    public Tovar(UUID ID) {
+        this.ID = ID;
+    }
+
+    public static int count = 0;
+
 }

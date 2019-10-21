@@ -6,39 +6,48 @@ import java.util.Scanner;
 public class Main {
 
 
-
     public static void main(String[] args) {
 
-        Tovar.ID();
         String[] firm = {"Телевизор", "Игровая консоль", "Телеприставка"};
         Random random1 = new Random();
         int pos = random1.nextInt(firm.length);
         System.out.println(firm[pos]);
+        Tovar tov = null;
         if (firm[pos].equals("Телевизор")) {
-            TV tv = new TV() ;
-            tv.create();
+            tov = new TV();
         } else if (firm[pos].equals("Игровая консоль")) {
-            Consol con = new Consol() ;
-            con.create();
+            tov = new Consol();
         } else if (firm[pos].equals("Телеприставка")) {
-            Pristavka pr = new Pristavka();
-            pr.create();
-
+            tov = new Pristavka();
         }
 
+        tov.create();
+        System.out.println("");
+        tov.read();
+        System.out.println("");
+        tov.update();
+        System.out.println("");
+        tov.read();
 
-//        System.out.println(qty.nextInt());
-
-//        int n = Integer.parseInt(args[1]);
+//        System.out.println("Введите объект");
+//        Scanner tovar = new Scanner(System.in);
+//        String val = tovar.nextLine();
 //
-//        for (int i = 1; i <= val; i++) {
-//            if (val1.equals("Телевизор")) {
+//        System.out.println("Количество товара");
+//        Scanner kol = new Scanner(System.in);
+//        int val1 = kol.nextInt();
+//
+//
+//        for (int i = 1; i <= val1; i++) {
+//            if (val.equals("Телевизор")) {
 //                TV tv = new TV();
 //                tv.read();
-//            } else if (val1.equals("Игровая консоль")) {
+//            } else if (val.equals("Игровая консоль")) {
 //                Consol con = new Consol();
-//            } else if (val1.equals("Телеприставка")) {
+//                con.read();
+//            } else if (val.equals("Телеприставка")) {
 //                Pristavka pris = new Pristavka();
+//                pris.read();
 //            }
 //        }
 
@@ -48,3 +57,4 @@ public class Main {
 
     }
 }
+
